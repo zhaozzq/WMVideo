@@ -53,6 +53,7 @@ class ViewController: UIViewController {
                 self.WM_FUNC_saveImage(UIImage.init(contentsOfFile: url)!)
             }
         }
+        vc.modalPresentationStyle = .fullScreen;
         present(vc, animated: true, completion: nil)
         
     }

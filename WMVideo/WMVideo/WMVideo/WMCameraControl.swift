@@ -74,9 +74,7 @@ class WMCameraControl: UIView {
         changeCameraButton.setImage(UIImage.wm_imageWithName_WMCameraResource(named: "change_camera"), for: .normal)
         changeCameraButton.frame = CGRect(x: self.wm_width - 50 - 40, y: self.wm_height * 0.5 - 20, width: 40, height: 40)
         changeCameraButton.addTarget(self, action: #selector(changeCameraButtonClick), for: .touchUpInside)
-        self.addSubview(changeCameraButton)
-        
-        
+        //self.addSubview(changeCameraButton)
     }
     
     func setupCameraButton() {

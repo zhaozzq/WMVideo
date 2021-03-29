@@ -11,24 +11,28 @@ import AssetsLibrary
 import AVFoundation
 import Photos
 
-enum WMCameraType {
+@objc
+public enum WMCameraType: Int {
     case video
     case image
     case imageAndVideo
 }
 
-class WMCameraViewController: UIViewController {
+@objc
+public class WMCameraViewController: UIViewController {
     
     var url: String?
     // output type
     var type: WMCameraType?
     // input tupe
-    var inputType:WMCameraType = WMCameraType.imageAndVideo
+    @objc
+    public var inputType:WMCameraType = WMCameraType.imageAndVideo
     // record video max length
-    var videoMaxLength: Double = 10
+    @objc
+    public var videoMaxLength: Double = 10
     
-    
-    var completeBlock: (String, WMCameraType) -> () = {_,_  in }
+    @objc
+    public var completeBlock: (String, WMCameraType) -> () = {_,_  in }
     
     let previewImageView = UIImageView()
     var videoPlayer: WMVideoPlayer!
@@ -37,7 +41,7 @@ class WMCameraViewController: UIViewController {
     
     let cameraContentView = UIView()
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         
         let scale: CGFloat = 16.0 / 9.0
@@ -53,13 +57,13 @@ class WMCameraViewController: UIViewController {
         setupView()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    public override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         manager.staruRunning()
         manager.focusAt(cameraContentView.center)
     }
     
-    override var prefersStatusBarHidden: Bool {
+    public override var prefersStatusBarHidden: Bool {
         return true
     }
     

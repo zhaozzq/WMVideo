@@ -15,7 +15,7 @@ class WMCameraFileTools: NSObject {
     /// - Returns: String  Directory Path
     class func wm_getDirectory() -> String {
         let path = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first
-        let resourceDir = path! + "/Resource/"
+        let resourceDir = path! + "/WOVideoes/"
         return resourceDir
     }
 
